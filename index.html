@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software Engineer Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    
+    h1, h2 {
+      font-family: 'Arial Black', sans-serif;
+      color: #333;
+    }
+    
+    h1 {
+      margin-top: 0;
+    }
+    
+    .intro {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .intro p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555;
+    }
+    
+    .section {
+      margin-bottom: 30px;
+    }
+    
+    .section h2 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+    
+    .section ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .section li {
+      margin-bottom: 5px;
+    }
+    
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    
+    .radio-buttons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .radio-buttons input[type="radio"] {
+      display: none;
+    }
+    
+    .radio-buttons label {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .radio-buttons input[type="radio"]:checked + label {
+      background-color: #555;
+    }
+    
+    .home-image {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Software Engineer Portfolio</h1>
+    <div class="radio-buttons">
+      <input type="radio" id="home" name="page" checked>
+      <label for="home">Home</label>
+      <input type="radio" id="projects" name="page">
+      <label for="projects">Projects</label>
+      <input type="radio" id="contact" name="page">
+      <label for="contact">Contact</label>
+    </div>
+  </header>
+
+  <div class="container">
+    <div id="home-section" class="section">
+      <div class="intro">
+        <h2>About Me</h2>
+        <p>I am a passionate software engineer with a focus on web development. I am proficient in HTML, CSS, and JavaScript. Currently, I am seeking opportunities to expand my skills and contribute to exciting projects.</p>
+      </div>
+      <img src="img/portimg.jpg">
+      
+    </div>
+
+    <div id="projects-section" class="section" style="display: none;">
+      <h2>Projects</h2>
+      <p> No Projects</p>
+    </div>
+
+    <div id="contact-section" class="section" style="display: none;">
+      <h2>Contact</h2>
+      <form action="#">
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name">
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email">
+        </div>
+        <div>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+        <div>
+          <button type="submit">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Software Engineer Portfolio</p>
+  </footer>
+
+  <script>
+    const radioButtons = document.querySelectorAll('input[type="radio"]');
+    const sections = document.querySelectorAll('.section');
+
+    radioButtons.forEach((radioButton, index) => {
+      radioButton.addEventListener('change', () => {
+        sections.forEach(section => section.style.display = 'none');
+        sections[index].style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
